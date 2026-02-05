@@ -1,0 +1,2 @@
+1）00 router_project文件夹下是一个PORTAL页面，主要作用是整合python_LOG文件夹下的其他项目，其他项目放到python_LOG文件夹后会自动读入到router.txt的文件中，菜单呈现在PORTAL页面上；
+2）其他几个文件夹是新增的项目文件夹，每新增一个项目，router.txt的文件中增加一行；
