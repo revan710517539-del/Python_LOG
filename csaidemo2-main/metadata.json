@@ -1,0 +1,8 @@
+{
+  "name": "常熟零售AI拜访DEMO",
+  "description": "An AI-powered assistant for bank relationship managers to register visits, extract KYC info, and identify business opportunities via chat and OCR.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
