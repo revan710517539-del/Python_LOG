@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Python_LOG 项目导航</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar__header">
+          <div class="brand">
+            <div class="brand__title">Python_LOG</div>
+            <div class="brand__sub">项目导航</div>
+          </div>
+          <button class="toggle" id="toggleSidebar" type="button" aria-label="隐藏侧边栏">
+            收起
+          </button>
+        </div>
+        <nav class="nav" id="navList">
+          <div class="nav__empty">正在读取 Router.txt…</div>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <button class="peek" id="showSidebar" type="button" aria-label="显示侧边栏"></button>
+        <section class="preview">
+          <iframe class="preview__frame" id="previewFrame" title="项目预览"></iframe>
+          <div class="preview__empty" id="previewEmpty">
+            点击左侧项目，右侧预览该项目首页。
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
