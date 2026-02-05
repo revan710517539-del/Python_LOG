@@ -3,6 +3,5 @@ node_modules/
 .venv/
 .history-memo/
 __pycache__/
-.vscode/
  $ HOME/.nvm/
 **/ $ HOME/.nvm/
