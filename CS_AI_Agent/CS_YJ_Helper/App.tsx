@@ -231,29 +231,9 @@ const App: React.FC = () => {
   const [reportPeriod, setReportPeriod] = useState<'day' | 'week' | 'month' | 'year'>('day');
   const [rankScope, setRankScope] = useState<'region' | 'bank'>('region');
   const [rankStatusFilter, setRankStatusFilter] = useState<'all' | 'normal' | 'warning' | 'critical'>('all');
-  const getInitialPage = () => {
-    if (typeof window === 'undefined') return 'overview';
-    const params = new URLSearchParams(window.location.search);
-    const pageParam = params.get('page');
-    if (pageParam === 'overview' || pageParam === 'manager' || pageParam === 'customer') {
-      return pageParam;
-    }
-    const roleParam = (params.get('role') || '').toLowerCase();
-    if (['branch', 'leader', 'branch_manager', 'branch-leader', 'branchmanager', 'branchhead'].includes(roleParam)) {
-      return 'overview';
-    }
-    if (roleParam === 'manager') {
-      return 'manager';
-    }
-    return 'overview';
-  };
-  const [currentPage, setCurrentPage] = useState<'overview' | 'manager' | 'customer'>(getInitialPage);
+  const [currentPage, setCurrentPage] = useState<'overview' | 'manager' | 'customer'>('overview');
   const [selectedManager, setSelectedManager] = useState<RelationshipManager | null>(MOCK_RM_LIST[0]);
-  const [selectedCustomerName, setSelectedCustomerName] = useState<string | null>(() => {
-    if (typeof window === 'undefined') return null;
-    const params = new URLSearchParams(window.location.search);
-    return params.get('customerName');
-  });
+  const [selectedCustomerName, setSelectedCustomerName] = useState<string | null>(null);
   const [managerOpportunities, setManagerOpportunities] = useState<Record<string, OpportunityItem[]>>({});
   const [priorityOverrides, setPriorityOverrides] = useState<Record<string, 'important' | 'nonimportant'>>({});
   const [cooldownUntilMap, setCooldownUntilMap] = useState<Record<string, number>>({});
